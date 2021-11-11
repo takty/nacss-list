@@ -18,6 +18,6 @@ window['NACSS'] = window['NACSS'] || {};
 		NS.listCustomized = initialize;
 	})();
 
-	// @include _utility.js
+	// @include _style-class.js
 
 })(window['NACSS']);
