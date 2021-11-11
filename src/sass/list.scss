@@ -1,0 +1,15 @@
+/**
+ *
+ * List Style
+ *
+ * @author Takuto Yanagida
+ * @version 2021-11-11
+ *
+ */
+
+
+@use 'inner';
+
+
+@include inner.style-list-basic;
+@include inner.style-list-customized;

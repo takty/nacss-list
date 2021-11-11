@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>nacss-list</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/list.min.css?v093935t">
+<link rel="stylesheet" href="css/style.min.css?v093935t">
+<script src="js/list.min.js?v093935t"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const uls = document.getElementsByTagName('ul');
+		window['NACSS'].listCustomized(uls);
+	});
+</script>
+</head>
+
+<body>
+	<header>
+		<h1>List Style</h1>
+	</header>
+
+	<main>
+		<h2>Unordered List</h2>
+
+		<h3>Normal (disc) style</h3>
+		<ul>
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ul>
+
+		<div class="blank"></div>
+
+		<pre><code>&lt;ul&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h3>Circle style</h3>
+		<ul style="list-style: circle;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ul>
+
+		<pre><code>&lt;ul style="list-style: circle;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h3>Square style</h3>
+		<ul style="list-style: square;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ul>
+
+		<pre><code>&lt;ul style="list-style: square;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h3>Nested Lists</h3>
+		<ul>
+			<li>Gregor then turned to look out the window at the dull weather.
+				<ul>
+					<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+					<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+						whole of her lower arm towards the viewer.</li>
+				</ul>
+				<ul style="list-style: circle;">
+					<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+					<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+						whole of her lower arm towards the viewer.</li>
+				</ul>
+				<ul style="list-style: square;">
+					<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+					<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+						whole of her lower arm towards the viewer.</li>
+				</ul>
+			</li>
+		</ul>
+
+		<pre><code>&lt;ul&gt;
+    &lt;li&gt;...
+        &lt;ul&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul style="list-style: circle;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul style="list-style: square;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h3>Customized style</h3>
+		<ul data-nc-list="special">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ul>
+
+		<h2>Ordered List</h2>
+
+		<h3>Normal style</h3>
+
+		<ol>
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ol>
+
+		<pre><code>&lt;ol&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+		<h3>Lower-alpha style</h3>
+		<ol style="list-style: lower-alpha;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ol>
+
+		<pre><code>&lt;ol style="list-style: lower-alpha;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+		<h3>Lower-greek style</h3>
+		<ol style="list-style: lower-greek;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ol>
+
+		<pre><code>&lt;ol style="list-style: lower-greek;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+		<h3>Lower-roman style</h3>
+		<ol style="list-style: lower-roman;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ol>
+
+		<pre><code>&lt;ol style="list-style: lower-roman;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+		<h3>Upper-alpha style</h3>
+		<ol style="list-style: upper-alpha;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ol>
+
+		<pre><code>&lt;ol style="list-style: upper-alpha;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+		<h3>Upper-roman style</h3>
+		<ol style="list-style: upper-roman;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ol>
+
+		<pre><code>&lt;ol style="list-style: upper-roman;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+		<h3>Nested Lists</h3>
+		<ul>
+			<li>Gregor then turned to look out the window at the dull weather.
+				<ol>
+					<li>Gregor then turned to look out the window at the dull weather.</li>
+				</ol>
+				<ol style="list-style: lower-alpha;">
+					<li>Gregor then turned to look out the window at the dull weather.</li>
+				</ol>
+				<ol style="list-style: lower-greek;">
+					<li>Gregor then turned to look out the window at the dull weather.</li>
+				</ol>
+				<ol style="list-style: lower-roman;">
+					<li>Gregor then turned to look out the window at the dull weather.</li>
+				</ol>
+				<ol style="list-style: upper-alpha;">
+					<li>Gregor then turned to look out the window at the dull weather.</li>
+				</ol>
+				<ol style="list-style: upper-roman;">
+					<li>Gregor then turned to look out the window at the dull weather.</li>
+				</ol>
+			</li>
+		</ul>
+
+		<pre><code>&lt;ul&gt;
+    &lt;li&gt;...
+        &lt;ol&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;ol style="list-style: lower-alpha;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;ol style="list-style: lower-greek;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;ol style="list-style: lower-roman;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;ol style="list-style: upper-alpha;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;ol style="list-style: upper-roman;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h3>Reversed counter</h3>
+
+		<ol reversed>
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ol>
+
+		<pre><code>&lt;ol reversed&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+		<ol reversed start="4">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ol>
+
+		<pre><code>&lt;ol reversed start="4"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+		<h2>Definition List</h2>
+
+		<dl>
+			<dt>Definition Term</dt>
+			<dd>The bedding was hardly able to cover it and seemed ready to slide off any moment.</dd>
+			<dt>Definition Term</dt>
+			<dd>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</dd>
+		</dl>
+
+		<pre><code>&lt;dl&gt;
+    &lt;dt&gt;...&lt;/dt&gt;&lt;dd&gt;...&lt;/dd&gt;
+    &lt;dt&gt;...&lt;/dt&gt;&lt;dd&gt;...&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+	</main>
+
+</body>
+</html>

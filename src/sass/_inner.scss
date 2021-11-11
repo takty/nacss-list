@@ -1,0 +1,71 @@
+/**
+ *
+ * List Style (SCSS)
+ *
+ * @author Takuto Yanagida
+ * @version 2021-11-11
+ *
+ */
+
+
+@function bp($min, $max, $bp) {
+	@return clamp(#{$min}, calc((100% - #{$bp}) * 9999), #{$max});
+}
+
+@mixin style-list-basic {
+	ul, ol, dl {
+		--list-marker-color : lightgray;
+		--list-min-width    : 36rem;
+		--list-indent-width : 3rem;
+		--list-indent-shrink: 1.5rem;
+	}
+
+	ul, ol {
+		padding-left: bp(
+			calc(var(--list-indent-width) - var(--list-indent-shrink)),
+			var(--list-indent-width),
+			var(--list-min-width),
+		);
+		> li::marker {
+			color: var(--list-marker-color);
+			font-weight: bold;
+		}
+	}
+
+	dl {
+		--list-indent-width-dl: var(--list-indent-width) / 2;
+
+		padding-left: bp(
+			calc(var(--list-indent-width-dl) - var(--list-indent-shrink)),
+			var(--list-indent-width-dl),
+			var(--list-min-width),
+		);
+		> dt {
+			color: var(--list-marker-color);
+			font-weight: bold;
+		}
+		> dd {
+			margin-left: 1.5rem;
+		}
+	}
+}
+
+@mixin style-list-customized {
+	ul[data-nc-list] {
+		list-style: none;
+
+		> li {
+			position: relative;
+
+			&::before {
+				content : '';
+				position: absolute;
+				left    : -1.5rem;
+				width   : 1em;
+				height  : 1em;
+
+				background-size: contain;
+			}
+		}
+	}
+}
