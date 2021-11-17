@@ -1,71 +1,103 @@
 /**
  *
- * List Style (SCSS)
+ * Inner
  *
  * @author Takuto Yanagida
- * @version 2021-11-11
+ * @version 2021-11-17
  *
  */
 
 
-@function bp($min, $max, $bp) {
-	@return clamp(#{$min}, calc((100% - #{$bp}) * 9999), #{$max});
+@use 'utility';
+
+
+@mixin custom-property {
+	// un-ordered, definition
+	--nc-list-marker-color : #777;
+	--nc-list-min-width    : 36rem;
+	--nc-list-indent-width : 3rem;
+	--nc-list-indent-shrink: 1.5rem;
+
+	// definition
+	--nc-list-indent-definition-offset: 1.5rem;
+
+	// margin
+	--nc-list-item-margin: 0.75rem;
 }
 
-@mixin style-list-basic {
-	ul, ol, dl {
-		--list-marker-color : lightgray;
-		--list-min-width    : 36rem;
-		--list-indent-width : 3rem;
-		--list-indent-shrink: 1.5rem;
-	}
-
-	ul, ol {
-		padding-left: bp(
-			calc(var(--list-indent-width) - var(--list-indent-shrink)),
-			var(--list-indent-width),
-			var(--list-min-width),
-		);
-		> li::marker {
-			color: var(--list-marker-color);
+@mixin un-ordered {
+	padding-left: utility.bp(
+		calc(var(--nc-list-indent-width) - var(--nc-list-indent-shrink)),
+		var(--nc-list-indent-width),
+		var(--nc-list-min-width),
+	);
+	> li {
+		&::marker {
+			color: var(--nc-list-marker-color);
 			font-weight: bold;
 		}
-	}
 
-	dl {
-		--list-indent-width-dl: var(--list-indent-width) / 2;
-
-		padding-left: bp(
-			calc(var(--list-indent-width-dl) - var(--list-indent-shrink)),
-			var(--list-indent-width-dl),
-			var(--list-min-width),
-		);
-		> dt {
-			color: var(--list-marker-color);
-			font-weight: bold;
-		}
-		> dd {
-			margin-left: 1.5rem;
+		// Margin
+		> :is(ul, ol, dl) {  // For nesting lists
+			margin-top: var(--nc-list-item-margin);
 		}
 	}
+
+	// Margin
+	> li + li { margin-top: var(--nc-list-item-margin); }
+	&[data-nc-compact] > li + li { margin-top: 0; }
 }
 
-@mixin style-list-customized {
-	ul[data-nc-list] {
-		list-style: none;
 
-		> li {
-			position: relative;
+// -----------------------------------------------------------------------------
 
-			&::before {
-				content : '';
-				position: absolute;
-				left    : -1.5rem;
-				width   : 1em;
-				height  : 1em;
 
-				background-size: contain;
-			}
+@mixin definition {
+	padding-left: utility.bp(
+		calc(var(--nc-list-indent-width) - var(--nc-list-indent-definition-offset) - var(--nc-list-indent-shrink)),
+		calc(var(--nc-list-indent-width) - var(--nc-list-indent-definition-offset)),
+		var(--nc-list-min-width),
+	);
+	> dt {
+		color: var(--nc-list-marker-color);
+		font-weight: bold;
+	}
+	> dd {
+		margin-left: var(--nc-list-indent-definition-offset);
+
+		// Margin
+		> :is(ul, ol, dl) {  // For nesting Lists
+			margin-top: var(--nc-list-item-margin);
+		}
+	}
+
+	// Margin
+	> * + dt { margin-top: var(--nc-list-item-margin); }
+	&[data-nc-compact] > * + dt { margin-top: 0; }
+}
+
+
+// -----------------------------------------------------------------------------
+
+
+@mixin custom-property-customized {
+	--nc-list-marker-size: 1em;
+}
+
+@mixin customized {
+	list-style: none;
+
+	> li {
+		position: relative;
+
+		&::before {
+			content : '';
+			position: absolute;
+			left    : -1.5rem;
+			width   : var(--nc-list-marker-size);
+			height  : var(--nc-list-marker-size);
+
+			background-size: contain;
 		}
 	}
 }

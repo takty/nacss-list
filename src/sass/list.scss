@@ -1,9 +1,9 @@
 /**
  *
- * List Style
+ * List
  *
  * @author Takuto Yanagida
- * @version 2021-11-11
+ * @version 2021-11-17
  *
  */
 
@@ -11,5 +11,19 @@
 @use 'inner';
 
 
-@include inner.style-list-basic;
-@include inner.style-list-customized;
+:root {
+	@include inner.custom-property;
+	@include inner.custom-property-customized;
+}
+
+:is(ul, ol):where(:not([class])) {
+	@include inner.un-ordered;
+}
+
+dl:where(:not([class])) {
+	@include inner.definition;
+}
+
+ul[data-nc-list] {
+	@include inner.customized;
+}
