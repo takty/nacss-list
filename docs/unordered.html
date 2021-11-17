@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unordered List - nacss-list</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/list.min.css?v163422t">
+<link rel="stylesheet" href="css/style.min.css?v163422t">
+<script src="js/list.min.js?v163422t"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const uls = document.getElementsByTagName('ul');
+		window['NACSS'].listCustomized(uls);
+	});
+</script>
+</head>
+
+<body>
+	<header>
+		<h1>Unordered List</h1>
+		<nav><a href="index.html">Go back</a></nav>
+	</header>
+
+	<main>
+		<h2>Normal (disc) style</h2>
+		<ul>
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ul>
+
+		<div class="blank"></div>
+
+		<pre><code>&lt;ul&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h2>Circle style</h2>
+		<ul style="list-style: circle;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ul>
+
+		<pre><code>&lt;ul style="list-style: circle;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h2>Square style</h2>
+		<ul style="list-style: square;">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ul>
+
+		<pre><code>&lt;ul style="list-style: square;"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h2>Nested Lists</h2>
+		<ul>
+			<li>Gregor then turned to look out the window at the dull weather.
+				<ul>
+					<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+					<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+						whole of her lower arm towards the viewer.</li>
+				</ul>
+				<ul style="list-style: circle;">
+					<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+					<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+						whole of her lower arm towards the viewer.</li>
+				</ul>
+				<ul style="list-style: square;">
+					<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+					<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+						whole of her lower arm towards the viewer.</li>
+				</ul>
+			</li>
+		</ul>
+
+		<pre><code>&lt;ul&gt;
+    &lt;li&gt;...
+        &lt;ul&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul style="list-style: circle;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul style="list-style: square;"&gt;
+            &lt;li&gt;...&lt;/li&gt;
+            &lt;li&gt;...&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+		<h2>Customized style</h2>
+		<ul data-nc-list="special">
+			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
+			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
+				whole of her lower arm towards the viewer.</li>
+		</ul>
+	</main>
+
+</body>
+</html>
