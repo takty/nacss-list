@@ -1,6 +1,6 @@
 /**
  *
- * List Style (JS)
+ * List
  *
  * @author Takuto Yanagida
  * @version 2021-11-11
