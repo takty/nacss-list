@@ -3,7 +3,7 @@
  * Inner
  *
  * @author Takuto Yanagida
- * @version 2021-11-17
+ * @version 2021-11-29
  *
  */
 
@@ -14,7 +14,7 @@
 @mixin custom-property {
 	// un-ordered, definition
 	--nc-list-marker-color : #777;
-	--nc-list-min-width    : 36rem;
+	--nc-list-indent-bp    : 36rem;
 	--nc-list-indent-width : 3rem;
 	--nc-list-indent-shrink: 1.5rem;
 
@@ -26,10 +26,10 @@
 }
 
 @mixin un-ordered {
-	padding-left: utility.bp(
+	padding-inline-start: utility.bp(
 		calc(var(--nc-list-indent-width) - var(--nc-list-indent-shrink)),
 		var(--nc-list-indent-width),
-		var(--nc-list-min-width),
+		var(--nc-list-indent-bp),
 	);
 	> li {
 		&::marker {
@@ -39,13 +39,17 @@
 
 		// Margin
 		> :is(ul, ol, dl) {  // For nesting lists
-			margin-top: var(--nc-list-item-margin);
+			margin-block-start: var(--nc-list-item-margin);
 		}
 	}
 
 	// Margin
-	> li + li { margin-top: var(--nc-list-item-margin); }
-	&[data-nc-compact] > li + li { margin-top: 0; }
+	> li + li {
+		margin-block-start: var(--nc-list-item-margin);
+	}
+	&[data-nc-compact] > li + li {
+		margin-block-start: 0;
+	}
 }
 
 
@@ -53,27 +57,31 @@
 
 
 @mixin definition {
-	padding-left: utility.bp(
+	padding-inline-start: utility.bp(
 		calc(var(--nc-list-indent-width) - var(--nc-list-indent-definition-offset) - var(--nc-list-indent-shrink)),
 		calc(var(--nc-list-indent-width) - var(--nc-list-indent-definition-offset)),
-		var(--nc-list-min-width),
+		var(--nc-list-indent-bp),
 	);
 	> dt {
 		color: var(--nc-list-marker-color);
 		font-weight: bold;
 	}
 	> dd {
-		margin-left: var(--nc-list-indent-definition-offset);
+		margin-inline-start: var(--nc-list-indent-definition-offset);
 
 		// Margin
 		> :is(ul, ol, dl) {  // For nesting Lists
-			margin-top: var(--nc-list-item-margin);
+			margin-block-start: var(--nc-list-item-margin);
 		}
 	}
 
 	// Margin
-	> * + dt { margin-top: var(--nc-list-item-margin); }
-	&[data-nc-compact] > * + dt { margin-top: 0; }
+	> * + dt {
+		margin-block-start: var(--nc-list-item-margin);
+	}
+	&[data-nc-compact] > * + dt {
+		margin-block-start: 0;
+	}
 }
 
 
@@ -91,11 +99,12 @@
 		position: relative;
 
 		&::before {
-			content : '';
-			position: absolute;
-			left    : -1.5rem;
-			width   : var(--nc-list-marker-size);
-			height  : var(--nc-list-marker-size);
+			content: '';
+
+			position          : absolute;
+			inset-inline-start: -1.5rem;
+			width             : var(--nc-list-marker-size);
+			height            : var(--nc-list-marker-size);
 
 			background-size: contain;
 		}
