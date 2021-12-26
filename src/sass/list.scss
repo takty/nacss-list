@@ -3,27 +3,26 @@
  * List
  *
  * @author Takuto Yanagida
- * @version 2021-11-17
+ * @version 2021-12-26
  *
  */
 
 
-@use 'inner';
+@use '_list';
 
 
 :root {
-	@include inner.custom-property;
-	@include inner.custom-property-customized;
+	@include list.property;
 }
 
 :is(ul, ol):where(:not([class])) {
-	@include inner.un-ordered;
+	@include list.un-ordered;
 }
 
 dl:where(:not([class])) {
-	@include inner.definition;
+	@include list.definition;
 }
 
 ul[data-nc-list] {
-	@include inner.customized;
+	@include list.custom;
 }

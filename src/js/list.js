@@ -3,21 +3,23 @@
  * List
  *
  * @author Takuto Yanagida
- * @version 2021-12-07
+ * @version 2021-12-26
  *
  */
 
 
 'use strict';
 
-window['NACSS'] = window['NACSS'] || {};
+window['NACSS']         = window['NACSS']         || {};
+window['NACSS']['list'] = window['NACSS']['list'] || {};
 
 
-(function (NS) {
+((NS) => {
 
-	// @include _customized.js
-	NS.listCustomized = initialize;
+	// @include __style-class.js
 
-	// @include _style-class.js
+	NS.applyCustom = apply;
 
-})(window['NACSS']);
+	// @include _custom.js
+
+})(window['NACSS']['list']);

@@ -1,17 +1,17 @@
 /**
  *
- * Inner
+ * Un-Ordered and Definition
  *
  * @author Takuto Yanagida
- * @version 2021-11-29
+ * @version 2021-12-26
  *
  */
 
 
-@use 'utility';
+@use '__utility' as utility;
 
 
-@mixin custom-property {
+@mixin property-main {
 	// un-ordered, definition
 	--nc-list-marker-color : #777;
 	--nc-list-indent-bp    : 36rem;
@@ -52,10 +52,6 @@
 	}
 }
 
-
-// -----------------------------------------------------------------------------
-
-
 @mixin definition {
 	padding-inline-start: utility.bp(
 		calc(var(--nc-list-indent-width) - var(--nc-list-indent-definition-offset) - var(--nc-list-indent-shrink)),
@@ -81,32 +77,5 @@
 	}
 	&[data-nc-compact] > * + dt {
 		margin-block-start: 0;
-	}
-}
-
-
-// -----------------------------------------------------------------------------
-
-
-@mixin custom-property-customized {
-	--nc-list-marker-size: 1em;
-}
-
-@mixin customized {
-	list-style: none;
-
-	> li {
-		position: relative;
-
-		&::before {
-			content: '';
-
-			position          : absolute;
-			inset-inline-start: -1.5rem;
-			width             : var(--nc-list-marker-size);
-			height            : var(--nc-list-marker-size);
-
-			background-size: contain;
-		}
 	}
 }

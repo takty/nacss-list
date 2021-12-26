@@ -1,17 +1,17 @@
 /**
  *
- * Customized
+ * Custom
  *
  * @author Takuto Yanagida
- * @version 2021-11-11
+ * @version 2021-12-26
  *
  */
 
 
-function initialize(uls, opts = {}) {
+function apply(uls, opts = {}) {
 	opts = Object.assign({
 		styleList     : ':ncList',
-		customizedType: [],
+		customType: [],
 		doClearStyle  : true,
 	}, opts);
 
@@ -22,7 +22,7 @@ function initialize(uls, opts = {}) {
 
 function setStyle(t, opts) {
 	const type = t.style.listStyleType;
-	if (type !== '' && type !== 'none' && opts.customizedType.includes(type)) {
+	if (type !== '' && type !== 'none' && opts.customType.includes(type)) {
 		if (opts.doClearStyle) {
 			const re = new RegExp('list-style\\s*:\\s*' + type + '\\s*;?', 'gi');
 			if (t.getAttribute('style').match(re)) {
