@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <title>Unordered List - nacss-list</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/list.min.css?v232118t">
-<link rel="stylesheet" href="css/style.min.css?v232118t">
-<script src="js/list.min.js?v232118t"></script>
+<link rel="stylesheet" href="css/list.min.css?v221845t">
+<link rel="stylesheet" href="css/style.min.css?v221845t">
+<script src="js/list.min.js?v221845t"></script>
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
 		const uls = document.getElementsByTagName('ul');
-		window['NACSS'].listCustomized(uls);
+		window['NACSS'].list.applyCustom(uls);
 	});
 </script>
 </head>
@@ -98,13 +98,12 @@
     &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
-		<h2>Customized style</h2>
+		<h2>Custom style</h2>
 		<ul data-nc-list="special">
 			<li>The bedding was hardly able to cover it and seemed ready to slide off any moment.</li>
 			<li>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the
 				whole of her lower arm towards the viewer.</li>
 		</ul>
 	</main>
-
 </body>
 </html>
