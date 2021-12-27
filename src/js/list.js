@@ -3,7 +3,7 @@
  * List
  *
  * @author Takuto Yanagida
- * @version 2021-12-26
+ * @version 2021-12-27
  *
  */
 
@@ -18,8 +18,7 @@ window['NACSS']['list'] = window['NACSS']['list'] || {};
 
 	// @include __style-class.js
 
-	NS.applyCustom = apply;
-
 	// @include _custom.js
+	NS.applyCustom = apply;
 
 })(window['NACSS']['list']);
