@@ -1,12 +1,9 @@
 /**
- *
  * List
  *
  * @author Takuto Yanagida
  * @version 2021-12-27
- *
  */
-
 
 'use strict';
 

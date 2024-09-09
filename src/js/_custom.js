@@ -1,12 +1,9 @@
 /**
- *
  * Custom
  *
  * @author Takuto Yanagida
  * @version 2022-08-04
- *
  */
-
 
 function apply(uls, opts = {}) {
 	opts = Object.assign({
