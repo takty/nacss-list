@@ -2,7 +2,7 @@
  * Un-Ordered and Definition
  *
  * @author Takuto Yanagida
- * @version 2021-12-26
+ * @version 2024-09-09
  */
 
 @use '__utility' as utility;
@@ -21,7 +21,10 @@
 	--nc-list-item-margin: 0.75rem;
 }
 
-@mixin un-ordered {
+@mixin un-ordered($do-reset: true) {
+	@if $do-reset {
+		list-style-type: revert;  // For reset
+	}
 	padding-inline-start: utility.bp(
 		calc(var(--nc-list-indent-width) - var(--nc-list-indent-shrink)),
 		var(--nc-list-indent-width),
@@ -55,7 +58,7 @@
 		var(--nc-list-indent-bp),
 	);
 	> dt {
-		color: var(--nc-list-marker-color);
+		color      : var(--nc-list-marker-color);
 		font-weight: bold;
 	}
 	> dd {
